@@ -1,0 +1,5 @@
+spring:
+  application:
+    name: springboot-annotation
+server:
+  port: 90001
