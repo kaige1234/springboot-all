@@ -2,19 +2,55 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <!-- 声明项目描述符遵循哪一个POM模型版本。模型本身的版本很少改变，虽然如此，
+    但它仍然是必不可少的，这是为了当Maven引入了新的特性或者其他模型变更的时候，确保稳定性。 -->
     <modelVersion>4.0.0</modelVersion>
-
+    <!-- 父项目的坐标。如果项目中没有规定某个元素的值，那么父项目中的对应值即为项目的默认值。 坐标包括group ID，artifact ID和 version。 -->
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
         <version>2.4.1</version>
+        <!-- 父项目的pom.xml文件的相对路径。
+        相对路径允许你选择一个不同的路径。
+        默认值是../pom.xml。Maven首先在构建当前项目的地方寻找父项目的pom，其次在文件系统的这个位置（relativePath位置），然后在本地仓库，最后在远程仓库寻找父项目的pom。 -->
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
 
     <groupId>cn.com.sk</groupId>
     <artifactId>springboot-all</artifactId>
     <version>1.0-SNAPSHOT</version>
+    <!-- 项目产生的构件类型，例如jar、war、ear、pom。插件可以创建他们自己的构件类型，所以前面列的不是全部构件类型 -->
     <packaging>pom</packaging>
+    <!-- 项目主页的URL, Maven产生的文档用 -->
+    <url> http://www.baidu.com/banseon </url>
+
+    <!-- 项目开发者列表 -->
+    <developers>
+        <!-- 某个项目开发者的信息 -->
+        <developer>
+            <!-- 项目开发者的唯一标识符 -->
+            <id>code1000</id>
+            <!-- 项目开发者的全名 -->
+            <name>sunkai</name>
+            <!-- 开发者邮箱-->
+            <email>28619066@qq.com</email>
+            <!-- 开发者网页 -->
+            <url>暂时没有</url>
+            <roles>
+                <!--在项目中的角色-->
+                <role>普通员工</role>
+            </roles>
+        </developer>
+    </developers>
+
+
+
+
+    <properties>
+
+
+    </properties>
+
     <modules>
         <module>springboot-hello</module>
         <module>springboot-annotation</module>
