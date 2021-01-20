@@ -55,6 +55,25 @@
         <module>springboot-hello</module>
         <module>springboot-annotation</module>
         <module>springboot-maven</module>
+        <module>springboot-actautor</module>
+        <module>springboot-activity</module>
+        <module>springboot-admin</module>
+        <module>springboot-hbase</module>
+        <module>springboot-cannl</module>
+        <module>springboot-design-mode</module>
+        <module>springboot-elasticsearch</module>
+        <module>springboot-javabasics</module>
+        <module>springboot-kafka</module>
+        <module>springboot-lamd</module>
+        <module>springboot-mongodb</module>
+        <module>springboot-mybatis</module>
+        <module>springboot-redis</module>
+        <module>springboot-rabbit</module>
+        <module>springboot-rocketmq</module>
+        <module>springboot-jdbc</module>
+        <module>springboot-thymeleaf</module>
+        <module>springboot-security</module>
+        <module>springboot-redis</module>
     </modules>
 
     <dependencies>
