@@ -74,6 +74,7 @@
         <module>springboot-thymeleaf</module>
         <module>springboot-security</module>
         <module>springboot-redis</module>
+        <module>srpingboot-jvm</module>
     </modules>
 
     <dependencies>
