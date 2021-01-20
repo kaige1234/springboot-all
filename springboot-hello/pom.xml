@@ -6,7 +6,6 @@
         <groupId>cn.com.sk</groupId>
         <artifactId>springboot-all</artifactId>
         <version>1.0-SNAPSHOT</version>
-        <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>cn.com.sk</groupId>
     <artifactId>springboot-hello</artifactId>

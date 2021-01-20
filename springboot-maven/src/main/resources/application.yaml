@@ -2,7 +2,7 @@ spring:
   application:
     name: @name@
 server:
-  port: 90013
+  port: 9013
 
 
 
