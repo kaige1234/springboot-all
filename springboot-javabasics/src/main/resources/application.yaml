@@ -1,6 +1,6 @@
 spring:
   application:
-    name: @name@
+    name: 777
 server:
   port: 9010
 

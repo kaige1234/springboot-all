@@ -75,9 +75,13 @@
         <module>springboot-security</module>
         <module>springboot-redis</module>
         <module>srpingboot-jvm</module>
+        <module>springboot-seata</module>
     </modules>
 
     <dependencies>
+
+
+
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter</artifactId>
@@ -104,7 +108,26 @@
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
+
     </dependencies>
+    <dependencyManagement>
+        <dependencies>
+            <!-- https://mvnrepository.com/artifact/com.alibaba/easyexcel -->
+
+
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>easyexcel</artifactId>
+                <version>2.1.4</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.apache.poi</groupId>
+                <artifactId>poi</artifactId>
+                <version>3.17</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
 
     <!--<dependencyManagement>
         <dependencies>
