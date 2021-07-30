@@ -1,7 +1,13 @@
 spring:
   application:
-    name: @name@
+    name: admin
+  boot:
+    admin:
+      url: http://localhost:${server.port}
 server:
   port: 9003
-
-
+#management:
+#  endpoints:
+#    web:
+#      exposure:
+#        include:

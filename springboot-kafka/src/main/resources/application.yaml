@@ -1,7 +1,26 @@
 spring:
   application:
     name: @name@
+  kafka:
+    producer:
+      retries: 1
+      batch-size: 16384
+      buffer-memory: 33554432
+      acks: all
+      properties:
+        linger:
+          ms: 5
+      key-serializer: org.apache.kafka.common.serialization.IntegerSerializer
+      value-serializer: org.apache.kafka.common.serialization.StringSerializer
+    consumer:
+      auto-offset-reset: earliest
+      enable-auto-commit: true
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
 server:
   port: 9012
+
+
+# kafka 的配置信息
 
 
