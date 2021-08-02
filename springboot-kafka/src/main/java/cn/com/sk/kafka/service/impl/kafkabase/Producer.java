@@ -1,11 +1,10 @@
 package cn.com.sk.kafka.service.impl.kafkabase;
 
 import lombok.SneakyThrows;
-import org.apache.kafka.clients.producer.Callback;
-import org.apache.kafka.clients.producer.KafkaProducer;
-import org.apache.kafka.clients.producer.ProducerRecord;
-import org.apache.kafka.clients.producer.RecordMetadata;
+import org.apache.kafka.clients.producer.*;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Properties;
 
 /**
@@ -29,6 +28,9 @@ public class Producer extends Thread {
         properties.put("value.serializer","org.apache.kafka.common.serialization.StringSerializer");
         //多少条数据发送一次 默认16k
         properties.put("batch.size",21234);
+        List<String> in = new ArrayList<String>();
+        in.add("cn.com.sk.kafka.service.impl.interceptor.KafkaInterceptor");
+        properties.put(ProducerConfig.INTERCEPTOR_CLASSES_CONFIG,in);
         this.produce = new KafkaProducer<Integer, String>(properties);
         this.topic = topic;
         this.isAsync = isAsync;
