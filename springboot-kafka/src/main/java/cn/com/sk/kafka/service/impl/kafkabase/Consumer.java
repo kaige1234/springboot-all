@@ -16,14 +16,14 @@ import java.util.Properties;
  * @description: TODO
  * @date 2021/7/2919:16
  */
-public class Consumer extends Thread {
+public class    Consumer extends Thread {
 
     private final KafkaConsumer<Integer,String> kafkaConsumer;
     private final String topic;
 
     public Consumer(String topic) {
         Properties properties = new Properties();
-        properties.put("bootstrap.servers","localhost:9092");
+        properties.put("bootstrap.servers","192.168.211.147:9092,192.168.211.148:9092,192.168.211.128:9092");
         properties.put("key.deserializer", StringDeserializer.class.getName());
         properties.put("value.deserializer",StringDeserializer.class.getName());
         properties.put("group.id","group-test");
@@ -34,7 +34,7 @@ public class Consumer extends Thread {
 
     @Override
     public void run() {
-        kafkaConsumer.subscribe(Arrays.asList("test"));
+            kafkaConsumer.subscribe(Arrays.asList("test"));
        while(true){
            ConsumerRecords<Integer, String> records = kafkaConsumer.poll(Duration.ofMillis(1000));
            for(ConsumerRecord<Integer,String> record:records){

@@ -22,7 +22,7 @@ public class Producer extends Thread {
 
     public Producer(String topic, Boolean isAsync) {
         Properties properties = new Properties();
-        properties.put("bootstrap.servers","localhost:9092");
+        properties.put("bootstrap.servers","192.168.211.147:9092,192.168.211.148:9092,192.168.211.128:9092");
         properties.put("client.id","DemoProducer");
         properties.put("key.serializer","org.apache.kafka.common.serialization.IntegerSerializer");
         properties.put("value.serializer","org.apache.kafka.common.serialization.StringSerializer");
@@ -41,7 +41,7 @@ public class Producer extends Thread {
     @Override
     public void run() {
         int num =1;
-        while(true && num<10){
+        while(true ){
             String msg = "ssss:"+num;
             if(isAsync){
                 produce.send(new ProducerRecord<Integer,String>(topic,num,msg));
@@ -52,6 +52,7 @@ public class Producer extends Thread {
                         System.out.println("ddd ");
                     }
                 };
+                System.out.println("发送的消息为："+msg);
             }else{
                 produce.send(new ProducerRecord<Integer,String>(topic,num,msg)).get();
             }

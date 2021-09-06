@@ -2,6 +2,10 @@ package cn.com.sk.hello.controller;
 
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.HashMap;
+import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
+
 /**
  * @author sk
  * @title: TestController
@@ -11,5 +15,8 @@ import org.springframework.web.bind.annotation.RestController;
  */
 @RestController
 public class TestController {
-
+    public static void main(String[] args){
+        Map<String,String> map = new ConcurrentHashMap<>();
+        map.put("string","string");
+    }
 }
