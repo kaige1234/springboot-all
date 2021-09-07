@@ -1,7 +1,58 @@
 spring:
   application:
     name: @name@
+#  datasource:
+#    hikari:
+#      pool-name: HikariCP
+#    driver-class-name: com.mysql.jdbc.Driver
+#    url: jdbc:mysql://192.168.108.119:3306/drds_crm_dev_press?zeroDateTimeBehavior=convertToNull
+#    username: drds_crm_dev_press
+#    password: Wc123456
+  datasource:
+    hikari:
+      pool-name: HikariCP
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://192.168.108.55:3306/base_mgr?zeroDateTimeBehavior=convertToNull
+    username: base_mgr
+    password: edasjt_2018
 server:
   port: 9020
+# rocketmq 配置
+rocketmq:
+  #rocketmq nameservice 地址
+  name-server: 192.168.211.147:9876
+  producer:
+    group: anran-producer-group
+    topic: TopicTest
+    sync-tag: anran-topic
+    aync-tag: anran-async-tags
+    oneway-tag: anran-oneway-tags
+  consumer:
+    group: anran-producer-group
+    topic: TopicTest
+    tags: anran-sync-tags||anran-async-tags||anran-oneway-tags
 
+jackson:
+  date-format: yyyy-MM-dd HH:mm:ss
+  time-zone: GMT+8
+  serialization:
+    write-dates-as-timestamps: false
 
+mybatis-plus:
+  configuration:
+    map-underscore-to-camel-case: true
+    auto-mapping-behavior: full
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  mapper-locations: classpath*:mapper/**/*Mapper.xml
+  global-config:
+    # 逻辑删除配置
+    db-config:
+      # 删除前
+      logic-not-delete-value: 1
+      # 删除后
+      logic-delete-value: 0
+
+logging:
+  level:
+    root: info
+    cn.com.sk.rocketmq: debug

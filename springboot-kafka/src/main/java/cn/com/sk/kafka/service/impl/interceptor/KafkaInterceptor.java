@@ -18,7 +18,7 @@ public class KafkaInterceptor implements ProducerInterceptor<String,String> {
     @Override
     public ProducerRecord<String, String> onSend(ProducerRecord<String, String> record) {
         System.out.println("发送消息时先进入拦截器，再发送消息");
-        return null;
+        return record;
     }
 
     @Override
