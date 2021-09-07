@@ -7,6 +7,9 @@ import cn.com.sk.rocketmq.rocketmq.ResponseMsg;
 import cn.com.sk.rocketmq.rocketmq.produce.SendCallbackListener;
 import cn.com.sk.rocketmq.service.ISecStaffService;
 import com.alibaba.fastjson.JSON;
+import com.aliyun.openservices.shade.com.alibaba.rocketmq.client.exception.MQBrokerException;
+import com.aliyun.openservices.shade.com.alibaba.rocketmq.client.exception.MQClientException;
+import com.aliyun.openservices.shade.com.alibaba.rocketmq.remoting.exception.RemotingException;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import lombok.Data;
 import lombok.extern.slf4j.Slf4j;
@@ -36,6 +39,9 @@ public class SecStaffServiceImpl extends ServiceImpl<SecStaffMapper, SecStaff> i
 
     @Autowired
     private RocketMQTemplate rocketMQTemplate;
+
+    @Autowired
+    private MQProductService mqProductService;
 
     @Value(value = "TopicTest:anran-topic")
     private String syncTag;
@@ -80,8 +86,8 @@ public class SecStaffServiceImpl extends ServiceImpl<SecStaffMapper, SecStaff> i
         staffDto.setMobile(secStaff.getMobileNo());
         staffDto.setName(secStaff.getStaffName());
         staffDto.setOrganizeCode(secStaff.getOrganizeCode());
-        staffDto.setOrganizeId("");
-        staffDto.setOrganizeName("");
+        staffDto.setOrganizeId("10987");
+        staffDto.setOrganizeName("34564");
         staffDto.setStaffCode(secStaff.getStaffCode());
         staffDto.setStaffId(secStaff.getStaffId() != null  ? String.valueOf(secStaff.getStaffId()):"");
         staffDto.setType(type);
@@ -105,14 +111,54 @@ public class SecStaffServiceImpl extends ServiceImpl<SecStaffMapper, SecStaff> i
     @Override
     public int insertSecStaff(SecStaff secStaff) {
         int insResult = secStaffMapper.insert(secStaff);
-        this.data(secStaff,MethodEnum.insert.code,TypeEnum.staff.code);
+       // this.data(secStaff,MethodEnum.insert.code,TypeEnum.staff.code);
+        try {
+            mqProductService.send(secStaff,MethodEnum.insert.code,TypeEnum.staff.code);
+        } catch (MQClientException e) {
+            e.printStackTrace();
+        } catch (RemotingException e) {
+            e.printStackTrace();
+        } catch (MQBrokerException e) {
+            e.printStackTrace();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         return insResult;
     }
 
     @Override
     public int updSecStaff(SecStaff secStaff) {
         int updResult = secStaffMapper.updateById(secStaff);
-        this.data(secStaff,MethodEnum.update.code,TypeEnum.staff.code);
+        //this.data(secStaff,MethodEnum.update.code,TypeEnum.staff.code);
+        try {
+            mqProductService.send(secStaff,MethodEnum.insert.code,TypeEnum.staff.code);
+        } catch (MQClientException e) {
+            e.printStackTrace();
+        } catch (RemotingException e) {
+            e.printStackTrace();
+        } catch (MQBrokerException e) {
+            e.printStackTrace();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         return updResult;
+    }
+
+    @Override
+    public int delStaff(SecStaff secStaff) {
+        int delResult = secStaffMapper.deleteById(secStaff.getStaffId());
+        //this.data(secStaff,MethodEnum.delete.code,TypeEnum.staff.code);
+        try {
+            mqProductService.send(secStaff,MethodEnum.insert.code,TypeEnum.staff.code);
+        } catch (MQClientException e) {
+            e.printStackTrace();
+        } catch (RemotingException e) {
+            e.printStackTrace();
+        } catch (MQBrokerException e) {
+            e.printStackTrace();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        return delResult;
     }
 }

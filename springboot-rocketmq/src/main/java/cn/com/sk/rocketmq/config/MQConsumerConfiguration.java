@@ -1,5 +1,6 @@
 package cn.com.sk.rocketmq.config;
 
+import cn.com.sk.rocketmq.service.impl.AllocateMessageQueueByHashAveragely;
 import cn.com.sk.rocketmq.service.impl.MQConsumeMsgListenerProcessor;
 import com.aliyun.openservices.shade.com.alibaba.rocketmq.client.consumer.DefaultMQPushConsumer;
 import com.aliyun.openservices.shade.com.alibaba.rocketmq.client.exception.MQClientException;
@@ -34,14 +35,17 @@ public class MQConsumerConfiguration {
     @Value("10")
     private int consumeThreadMax;
     //@Value("${rocketmq.consumer.topics}")
-    //@Value("TopicTest:anran-topic")
-    @Value("TopicTestss:anran-tosspic")
+    @Value("TopicTest:anran-topic")
+    //@Value("TopicTestss:anran-tosspic")
     private String topics;
     //@Value("${rocketmq.consumer.consumeMessageBatchMaxSize}")
     @Value("20")
     private int consumeMessageBatchMaxSize;
     @Autowired
     private MQConsumeMsgListenerProcessor mqMessageListenerProcessor;
+
+    @Autowired
+    private AllocateMessageQueueByHashAveragely allocateMessageQueueByHashAveragely;
 
     @Bean
     public DefaultMQPushConsumer getRocketMQConsumer() {
@@ -69,6 +73,8 @@ public class MQConsumerConfiguration {
          * 设置一次消费消息的条数，默认为1条
          */
         consumer.setConsumeMessageBatchMaxSize(consumeMessageBatchMaxSize);
+
+        consumer.setAllocateMessageQueueStrategy(allocateMessageQueueByHashAveragely);
         try {
             /**
              * 设置该消费者订阅的主题和tag，如果是订阅该主题下的所有tag，则tag使用*；如果需要指定订阅该主题下的某些tag，则使用||分割，例如tag1||tag2||tag3

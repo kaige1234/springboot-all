@@ -49,4 +49,9 @@ public class FarmersBaseController {
     public int updStaff(@RequestBody SecStaff secStaff){
         return secStaffService.updSecStaff(secStaff);
     }
+
+    @RequestMapping("/delStaff")
+    public int delStaff(@RequestBody SecStaff secStaff){
+        return secStaffService.delStaff(secStaff);
+    }
 }

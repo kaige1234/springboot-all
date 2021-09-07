@@ -20,4 +20,6 @@ public interface ISecStaffService extends IService<SecStaff> {
     int insertSecStaff(SecStaff secStaff);
 
     int updSecStaff(SecStaff secStaff);
+
+    int delStaff(SecStaff secStaff);
 }
