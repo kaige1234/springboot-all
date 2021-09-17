@@ -8,10 +8,13 @@ import com.aliyun.openservices.shade.com.alibaba.rocketmq.client.exception.MQBro
 import com.aliyun.openservices.shade.com.alibaba.rocketmq.client.exception.MQClientException;
 import com.aliyun.openservices.shade.com.alibaba.rocketmq.client.producer.DefaultMQProducer;
 import com.aliyun.openservices.shade.com.alibaba.rocketmq.client.producer.MessageQueueSelector;
+import com.aliyun.openservices.shade.com.alibaba.rocketmq.client.producer.SendCallback;
 import com.aliyun.openservices.shade.com.alibaba.rocketmq.common.message.Message;
 import com.aliyun.openservices.shade.com.alibaba.rocketmq.common.message.MessageQueue;
 import com.aliyun.openservices.shade.com.alibaba.rocketmq.remoting.exception.RemotingException;
+import io.netty.util.internal.StringUtil;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.commons.lang3.StringUtils;
 import org.apache.rocketmq.spring.support.RocketMQHeaders;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.messaging.support.MessageBuilder;
@@ -58,13 +61,16 @@ public class MQProductService {
         Message sendMsg = new Message(topic,tag,strStaff.getBytes());
         defaultMQProducer.send(sendMsg,new SendCallbackListener(staffId),defaultMQProducer.getSendMsgTimeout());
 
-        /*defaultMQProducer.send(sendMsg,new MessageQueueSelector(){
-
-            @Override
-            public MessageQueue select(List<MessageQueue> mqs, Message msg, Object arg) {
-                return mqs.get(0);
-            }
-        },defaultMQProducer.getSendMsgTimeout());*/
+        if(!StringUtils.isBlank(staffId)){
+            defaultMQProducer.send(sendMsg, new MessageQueueSelector(){
+                        @Override
+                        public MessageQueue select(List<MessageQueue> mqs, Message msg, Object arg) {
+                            int staffId = Integer.parseInt((String)arg);
+                            return mqs.get(staffId%(mqs.size()));
+                        }
+                    }, staffId,
+                    new SendCallbackListener(staffId), defaultMQProducer.getSendMsgTimeout());
+        }
     }
 
     private enum MethodEnum{
