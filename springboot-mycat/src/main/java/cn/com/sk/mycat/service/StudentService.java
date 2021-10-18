@@ -1,5 +1,7 @@
 package cn.com.sk.mycat.service;
 
+import cn.com.sk.mycat.entity.Student;
+
 /**
  * @author sunkai
  * @title: StudentService
@@ -9,5 +11,7 @@ package cn.com.sk.mycat.service;
  */
 public interface StudentService {
 
-    String queryFarmer();
+    String queryFarmer(int id);
+
+    int insert(Student student);
 }

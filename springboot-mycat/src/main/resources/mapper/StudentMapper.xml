@@ -10,8 +10,9 @@
     </resultMap>
 
     <select id="queryFarmer" resultType="java.lang.String">
-        select  name from student where sid=2
+        select  name from student where sid=#{id}
     </select>
+
 
 </mapper>
 

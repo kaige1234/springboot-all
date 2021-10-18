@@ -1,5 +1,6 @@
 package cn.com.sk.mycat.service.impl;
 
+import cn.com.sk.mycat.entity.Student;
 import cn.com.sk.mycat.mapper.StudentMapper;
 import cn.com.sk.mycat.service.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,7 +20,12 @@ public class StudentServiceImpl implements StudentService {
     private StudentMapper studentMapper;
 
     @Override
-    public String queryFarmer() {
-        return studentMapper.queryFarmer();
+    public String queryFarmer(int id) {
+        return studentMapper.queryFarmer(id);
+    }
+
+    @Override
+    public int insert(Student student) {
+        return studentMapper.insert(student);
     }
 }

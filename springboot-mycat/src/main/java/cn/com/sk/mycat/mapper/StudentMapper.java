@@ -1,13 +1,14 @@
 package cn.com.sk.mycat.mapper;
 
 import cn.com.sk.mycat.entity.Student;
-import com.baomidou.mybatisplus.core.mapper.Mapper;
+import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Component;
 
 
 
 @Component
-public interface StudentMapper extends Mapper<Student> {
+public interface StudentMapper extends BaseMapper<Student> {
 
-    String queryFarmer();
+    String queryFarmer(@Param("id") int id);
 }
