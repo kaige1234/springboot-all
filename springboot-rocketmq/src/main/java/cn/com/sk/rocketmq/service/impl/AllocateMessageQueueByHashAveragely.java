@@ -22,18 +22,23 @@ public class AllocateMessageQueueByHashAveragely extends AllocateMessageQueueAve
 
     @Override
     public List<MessageQueue> allocate(String consumerGroup, String currentCID, List<MessageQueue> mqAll, List<String> cidAll) {
-        //解析queue id
-        //char idChar = consumerGroup.charAt(consumerGroup.length() - "ConsumerTest".length());
-        //int id = Integer.parseInt(idChar+"");
         List<MessageQueue> submq = new ArrayList<MessageQueue>();
-        //根据queue id分配相应的MessageQueue
-        for(MessageQueue mq : mqAll) {
-            if(mq.getQueueId() == 0 || mq.getTopic().startsWith(MixAll.RETRY_GROUP_TOPIC_PREFIX)) {
-                submq.add(mq);
-            }
-        }
-        if(submq.size() == 0) {
-            log.warn("allocate err:"+consumerGroup+","+currentCID+","+cidAll+","+mqAll);
+
+        //consumer的排序后的
+        int index = cidAll.indexOf(currentCID);
+        //取模
+        int mod = mqAll.size() % cidAll.size();
+        //如果队列数小于消费者数量，则将分到队列数设置为1，如果余数大于当前消费者的index,则
+        //能分到的队列数+1，否则就是平均值
+        int averageSize =
+                mqAll.size() <= cidAll.size() ? 1 : (mod > 0 && index < mod ? mqAll.size() / cidAll.size()
+                        + 1 : mqAll.size() / cidAll.size());
+        //consumer获取第一个MessageQueue的索引
+        int startIndex = (mod > 0 && index < mod) ? index * averageSize : index * averageSize + mod;
+        // 如果消费者大于队列数，rang会是负数，循环也就不会执行
+        int range = Math.min(averageSize, mqAll.size() - startIndex);
+        for (int i = 0; i < range; i++) {
+            submq.add(mqAll.get((startIndex + i) % mqAll.size()));
         }
         return super.allocate(consumerGroup, currentCID, submq, cidAll);
 
