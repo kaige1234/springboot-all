@@ -11,7 +11,7 @@ package cn.com.sk.lamd.defaultinerface.lamd;
 public class TestMap {
 
     public static void main(String[] args){
-
+        
     }
 
 }
