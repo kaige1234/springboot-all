@@ -12,12 +12,39 @@ public class CreateList {
 
     public static void main(String[] args){
         List<User> userList = Utils.getRepetitionUserList();
+        //基本类型和字符串进行排序
+        List<String> collect = userList.stream().map(User::getCode).sorted().collect(Collectors.toList());
+        //根据对象的属性对对象进行排序
+        List<User> collect1 = userList.stream().sorted(Comparator.comparing(User::getCode)).collect(Collectors.toList());
+
+        System.out.println("");
+
+    }
+
+
+    public void sorted(){
+        List<User> userList = Utils.getRepetitionUserList();
+        //基本类型和字符串进行排序
+        List<String> collect = userList.stream().map(User::getCode).sorted().collect(Collectors.toList());
+        //根据对象的属性对对象进行排序
+        List<User> collect1 = userList.stream().sorted(Comparator.comparing(User::getCode)).collect(Collectors.toList());
+
+        System.out.println("");
+    }
+
+    public void limit(){
+        List<User> userList = Utils.getRepetitionUserList();
+        List<User> collect = userList.stream().limit(2).collect(Collectors.toList());
+        System.out.println("");
+    }
+
+    public void peek(){
+        List<User> userList = Utils.getRepetitionUserList();
         //第一种使用方式为对这个对象中的属性进行出来
         List<User> collect = userList.stream().peek(user -> user.setCode(user.getCode() + "G")).collect(Collectors.toList());
         //第二种操作是在每次流中进行打印调试
         List<User> collect1 = userList.stream().peek(System.out::println).collect(Collectors.toList());
         System.out.println("");
-
     }
 
     public static void flatMap(){

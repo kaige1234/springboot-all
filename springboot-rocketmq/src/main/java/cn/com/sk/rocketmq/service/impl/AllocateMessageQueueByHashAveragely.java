@@ -1,26 +1,26 @@
-package cn.com.sk.rocketmq.service.impl;
+/*package cn.com.sk.rocketmq.service.impl;
 
 import com.aliyun.openservices.shade.com.alibaba.rocketmq.client.consumer.rebalance.AllocateMessageQueueAveragely;
 import com.aliyun.openservices.shade.com.alibaba.rocketmq.common.MixAll;
 import com.aliyun.openservices.shade.com.alibaba.rocketmq.common.message.MessageQueue;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
+import sun.jvm.hotspot.utilities.MessageQueue;
 
 import java.util.ArrayList;
 import java.util.List;
 
-/**
+*//**
  * @author sunkai
  * @title: AllocateMessageQueueByHashAveragely
  * @projectName springboot-all
  * @description: TODO
  * @date 2021/9/719:01
- */
+ *//*
 @Slf4j
 @Component
 public class AllocateMessageQueueByHashAveragely extends AllocateMessageQueueAveragely {
 
-    @Override
     public List<MessageQueue> allocate(String consumerGroup, String currentCID, List<MessageQueue> mqAll, List<String> cidAll) {
         List<MessageQueue> submq = new ArrayList<MessageQueue>();
 
@@ -55,4 +55,4 @@ public class AllocateMessageQueueByHashAveragely extends AllocateMessageQueueAve
         int id = Integer.parseInt(idChar+"");
         System.out.println(id);
     }
-}
+}*/

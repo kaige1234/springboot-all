@@ -31,6 +31,12 @@ public class Utils {
         user.setUid(122L);
         user.setUserName("李先生");
 
+        User user4 = new User();
+        user4.setCode("1020");
+        user4.setStatus(1);
+        user4.setUid(122L);
+        user4.setUserName("李先生");
+
         User user1 = new User();
         user1.setCode("1000");
         user1.setStatus(1);
@@ -48,7 +54,7 @@ public class Utils {
         user3.setStatus(2);
         user3.setUid(122L);
         user3.setUserName("王小姐");
-        return Arrays.asList(user,user1,user2,user3);
+        return Arrays.asList(user,user1,user2,user3,user4);
     }
 
     public static List<User> getUserList(){

@@ -77,6 +77,10 @@
         <module>srpingboot-jvm</module>
         <module>springboot-seata</module>
         <module>springboot-mycat</module>
+        <module>springboot-springcloud-euerka</module>
+        <module>springboot-springcloud-ribbontwo</module>
+        <module>springboot-springcloud-gateway</module>
+        <module>springboot-springcloud-ribbon</module>
     </modules>
 
     <dependencies>
