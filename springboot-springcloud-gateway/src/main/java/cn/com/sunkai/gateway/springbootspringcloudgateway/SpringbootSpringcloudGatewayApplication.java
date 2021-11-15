@@ -7,7 +7,6 @@ import org.springframework.context.annotation.ComponentScan;
 
 @SpringBootApplication
 @EnableEurekaClient
-@ComponentScan("cn.com.sunkai.gateway")
 public class SpringbootSpringcloudGatewayApplication {
 
 	public static void main(String[] args) {

@@ -1,7 +1,6 @@
-package cn.com.sunkai.gateway.custom;
+package cn.com.sunkai.gateway.springbootspringcloudgateway.custom;
 
 import org.springframework.cloud.gateway.handler.predicate.AbstractRoutePredicateFactory;
-import org.springframework.cloud.gateway.handler.predicate.CookieRoutePredicateFactory;
 import org.springframework.http.HttpHeaders;
 import org.springframework.stereotype.Component;
 import org.springframework.web.server.ServerWebExchange;
@@ -24,6 +23,7 @@ public class CustomRoutePredicateFactory extends AbstractRoutePredicateFactory<C
             HttpHeaders headers = exchange.getRequest().getHeaders();
             //判断头中是否带了某个值
             List<String> list = headers.get(config.getName());
+            //发送请求时需要在请求中定义一下请求的头信息：Auto:value
             return list.size()>0;
         });
     }

@@ -1,4 +1,4 @@
-package cn.com.sunkai.gateway.Rate;
+package cn.com.sunkai.gateway.springbootspringcloudgateway.Rate;
 
 import org.springframework.cloud.gateway.filter.ratelimit.KeyResolver;
 import org.springframework.stereotype.Component;

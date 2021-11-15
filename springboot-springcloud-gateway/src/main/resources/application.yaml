@@ -1,0 +1,80 @@
+
+server:
+  port: 9033
+eureka:
+  instance:
+    hostname: ${spring.application.name}
+  client:
+    service-url:
+      register-with-euerka: true
+      fetch-registry: true
+      defaultZone: http://localhost:9030/eureka
+
+#基础的路由配置
+#spring:
+#  cloud:
+#    gateway:
+#      route:
+#        predicates:
+#        - Path=/spring-ribbon-01/**
+#        filters:
+#        - StripPrefix=1
+#        uri: http://127.0.0.1:9031
+
+
+#自定的路由断言工厂
+#自定义断言工厂的规则请参照CookieRoutePredicateFactory
+#第一点：敢于自定义断言的命名，命名是根据文件名字 Custom + RoutePredicateFactory
+# Custom 作为key 对应 spring.cloud.gateway.routes[0].predicates[1]= Custom=Auto 的 值为：Auto
+#第二点：在服务启动时会有该断言的名称加载 Loaded RoutePredicateFactory [Custom]
+spring:
+  application:
+    name: @name@
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+          #是否小写方式
+          lower-case-service-id: true
+      routes:
+#自定义的路由设置
+      - id: custom-routes
+        predicates:
+        - Path=/custom/**
+        - Custom=Auto
+        filters:
+        - StripPrefix=1
+        #自定义的过滤器与custom定义的过滤器不一样
+        - TestDefine=define
+        uri:
+          http://127.0.0.1:9031
+#配置gateway进行负载，当有多台机器时，通过如下配置可使机器负载
+      - id: lb_routes
+        predicates:
+        - Path=/lb/**
+        filters:
+        - StripPrefix=1
+        #sping-ribbon-01 为在eureka中的服务器名称
+        uri:
+          lb://sping-ribbon-01
+
+#限流的过滤器的配置
+      - id: rateLimiter_route
+        predicates: Path=/rateLimiter/**
+        filters:
+        - StripPrefix=1
+        - name: RequestRateLimiter
+          args:
+            key-resolver: "#{@ipAddressKeyResolver}"
+            redis-rate-limiter.replenishRate: 1
+            redis-rate-limiter.burstCapacity: 2
+            redis-rate-limiter.requestedTokens: 1
+            request-rate-limiter.deny-empty-key: true
+        uri: http://127.0.0.1:9031
+
+  #配置redis
+  redis:
+    host: 192.168.211.128
+    port: 6379
+
