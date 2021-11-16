@@ -75,6 +75,10 @@ spring:
 
   #配置redis
   redis:
-    host: 192.168.211.128
+    host: 192.168.1.7
     port: 6379
-
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
