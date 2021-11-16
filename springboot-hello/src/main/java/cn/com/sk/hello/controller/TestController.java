@@ -1,6 +1,7 @@
 package cn.com.sk.hello.controller;
 
 import lombok.Data;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -16,6 +17,7 @@ import java.util.List;
  */
 @RestController
 public class TestController {
+
     @Data
     class DecpSpectacularsRedFlag{
         private Integer flagColor;
