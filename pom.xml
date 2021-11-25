@@ -81,6 +81,10 @@
         <module>springboot-springcloud-ribbontwo</module>
         <module>springboot-springcloud-gateway</module>
         <module>springboot-springcloud-ribbon</module>
+        <module>springboot-springcloud-feign01</module>
+        <module>springboot-springcloud-feign02</module>
+        <module>springboot-springcloud-hystrix</module>
+        <module>springboot-webflux</module>
     </modules>
 
     <dependencies>

@@ -1,4 +1,16 @@
 
 server:
-  port: 9033
+  port: 9036
+
+spring:
+  application:
+    name: spring-hystrix
+eureka:
+  instance:
+    namespace: ${spring.application.name}
+  client:
+    service-url:
+      defaultZone: http://localhost:9030/eureka
+    fetch-registry: true
+    register-with-eureka: true
 
