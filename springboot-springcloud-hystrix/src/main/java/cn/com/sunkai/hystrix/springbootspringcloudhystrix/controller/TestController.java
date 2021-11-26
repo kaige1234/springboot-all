@@ -59,11 +59,11 @@ public class TestController {
      * @param num
      * @return
      */
-    @HystrixCommand(fallbackMethod = "queryMethodTimeOutFallback",commandProperties = {
+    @HystrixCommand(fallbackMethod = "queryMethodTimeOutFallback",commandProperties={
             @HystrixProperty(name="execution.isolation.thread.timeoutInMilliseconds",value="3000")
     })
     @RequestMapping("/queryMethodTimeOut/{num}")
-    public String queryMethodTimeOut(@PathVariable("num") int num){
+    public String queryMethodTimeOut(@PathVariable("num") Integer num){
         return restTemplate.getForObject("http://sping-ribbon-02:9034/test/getTest",String.class);
     }
 

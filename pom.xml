@@ -84,6 +84,7 @@
         <module>springboot-springcloud-feign01</module>
         <module>springboot-springcloud-feign02</module>
         <module>springboot-springcloud-hystrix</module>
+        <module>springboot-springcloud-hystrix-openfeign</module>
         <module>springboot-webflux</module>
     </modules>
 
