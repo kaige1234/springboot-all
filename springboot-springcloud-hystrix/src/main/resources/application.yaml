@@ -14,3 +14,52 @@ eureka:
     fetch-registry: true
     register-with-eureka: true
 
+ribbon:
+  ReadTimeout: 10000
+  ConnectTimeout: 10000
+hystrix:
+  command:
+    default:  #全局配置， feignclient#method(param)
+      execution:
+        timeout:
+          enable: true
+        isolation:
+          thread:
+            timeoutInMilliseconds: 1000
+    ResourceTriggeredHystrixFallBack#getResource():
+      execution:
+        isolation:
+          strategy: SEMAPHORE
+          semaphore:
+            maxConcurrentRequests: 10
+      ResourceTriggeredHystrixFallBack#insert(String):
+        execution:
+          isolation:
+            strategy: THREAD
+  threadpool:
+    resource_triggered_hystrix:
+      coreSize: 2
+      maxQueueSize: 10
+      queueSizeRejectionThreshold: 800
+
+#feign 开启熔断
+feign:
+  hystrix:
+    enabled: true
+
+#management:
+#  endpoints:
+#    web:
+#      exposure:
+#        include: refresh,hystrix.stream
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+
+
+
+
+
+

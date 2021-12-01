@@ -9,6 +9,6 @@ public class TestFeignController {
 
     @RequestMapping("/get")
     public String get(){
-
+        return null;
     }
 }

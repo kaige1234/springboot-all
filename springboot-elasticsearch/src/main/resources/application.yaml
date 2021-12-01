@@ -1,7 +1,10 @@
 spring:
   application:
-    name: @name@
+    name: springboot-test-01
 server:
-  port: 90006
-
+  port: 9089
+logging:
+  level:
+    root: info
+  config: classpath:logback-spring.xml
 

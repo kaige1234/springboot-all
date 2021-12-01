@@ -86,6 +86,7 @@
         <module>springboot-springcloud-hystrix</module>
         <module>springboot-springcloud-hystrix-openfeign</module>
         <module>springboot-webflux</module>
+        <module>springboot-springcloud-hytrix-dashboard</module>
     </modules>
 
     <dependencies>

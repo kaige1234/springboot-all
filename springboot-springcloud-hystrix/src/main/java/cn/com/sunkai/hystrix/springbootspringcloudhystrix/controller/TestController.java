@@ -5,6 +5,7 @@ import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 import com.netflix.hystrix.contrib.javanica.annotation.HystrixProperty;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
@@ -34,7 +35,7 @@ public class TestController {
             @HystrixProperty(name="circuitBreaker.sleepWindowInMilliseconds",value="5000"),//5秒的熔断时间
             @HystrixProperty(name="circuitBreaker.errorThresholdPercentage",value="50")//百分比 失败率超过50%
     },fallbackMethod="fallbackTest")
-    @RequestMapping("/get/{num}")
+    @PostMapping("/get/{num}")
     public String get(@PathVariable("num") Integer num){
 
         if(num%2 == 1){
@@ -62,7 +63,7 @@ public class TestController {
     @HystrixCommand(fallbackMethod = "queryMethodTimeOutFallback",commandProperties={
             @HystrixProperty(name="execution.isolation.thread.timeoutInMilliseconds",value="3000")
     })
-    @RequestMapping("/queryMethodTimeOut/{num}")
+    @PostMapping("/queryMethodTimeOut/{num}")
     public String queryMethodTimeOut(@PathVariable("num") Integer num){
         return restTemplate.getForObject("http://sping-ribbon-02:9034/test/getTest",String.class);
     }
