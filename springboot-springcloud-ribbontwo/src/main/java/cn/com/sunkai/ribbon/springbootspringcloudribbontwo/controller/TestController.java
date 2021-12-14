@@ -18,6 +18,11 @@ public class TestController {
     @RequestMapping("/getTest")
     public String getTest(){
         System.out.println("nihao");
+        try {
+            Thread.sleep(5000);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
         return "服务调用成功";
     }
 

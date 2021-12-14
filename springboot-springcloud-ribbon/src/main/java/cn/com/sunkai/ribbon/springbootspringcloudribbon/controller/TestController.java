@@ -20,8 +20,11 @@ public class TestController {
 
     @RequestMapping("/getTest")
     public String getTest(){
+        System.out.println(System.currentTimeMillis());
         log.info("9036");
-        return restTemplate.getForObject("http://sping-ribbon-02:9034/test/getTest",String.class);
+        String s = restTemplate.getForObject("http://sping-ribbon-02:9034/test/getTest",String.class);
+        System.out.println(System.currentTimeMillis());
+        return s;
     }
 
     @RequestMapping("/getYouzheng")

@@ -27,16 +27,16 @@ public class EchoServer {
 
         ServerBootstrap serverBootstrap = new ServerBootstrap();
         serverBootstrap.group(eventExecutors,eventExecutors1);
-        serverBootstrap.channel(NioServerSocketChannel.class)
-                .option(ChannelOption.SO_BACKLOG,100)
-                .handler(new LoggingHandler(LogLevel.INFO))
-                .childHandler(new ChannelInitializer<SocketChannel>() {
-                    @Override
-                    protected void initChannel(SocketChannel socketChannel) throws Exception {
-                        ByteBuf delimiter = Unpooled.copiedBuffer("$_")
-                                .getBytes());
-                    }
-                });
+//        serverBootstrap.channel(NioServerSocketChannel.class)
+//                .option(ChannelOption.SO_BACKLOG,100)
+//                .handler(new LoggingHandler(LogLevel.INFO))
+//                .childHandler(new ChannelInitializer<SocketChannel>() {
+//                    @Override
+//                    protected void initChannel(SocketChannel socketChannel) throws Exception {
+//                        ByteBuf delimiter = Unpooled.copiedBuffer("$_")
+//                                .getBytes());
+//                    }
+//                });
 
     }
 
