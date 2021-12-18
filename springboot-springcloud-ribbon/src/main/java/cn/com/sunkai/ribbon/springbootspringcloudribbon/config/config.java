@@ -13,6 +13,7 @@ public class config {
     @Bean
     public RestTemplate getRestTemplate(){
         SimpleClientHttpRequestFactory requestFactory = new SimpleClientHttpRequestFactory();
+        //设置连接的超时时间
         requestFactory.setConnectTimeout(3000);
         requestFactory.setReadTimeout(3000);
         return new RestTemplate(requestFactory);
