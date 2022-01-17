@@ -12,9 +12,6 @@ import io.netty.channel.ChannelHandlerAdapter;
  */
 public class TimeServerHandle extends ChannelHandlerAdapter {
 
-//    @Override
-//    public void channelRead(ChannelHandler){
-//
-//    }
+
 
 }

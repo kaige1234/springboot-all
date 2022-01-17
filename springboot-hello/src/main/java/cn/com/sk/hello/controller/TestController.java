@@ -1,8 +1,9 @@
 package cn.com.sk.hello.controller;
 
 import lombok.Data;
-import org.springframework.beans.factory.annotation.Value;
+import lombok.extern.log4j.Log4j;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.ArrayList;
@@ -16,6 +17,7 @@ import java.util.List;
  * @date 2021/1/199:34
  */
 @RestController
+@RequestMapping("/cooperatives")
 public class TestController {
 
     @Data
@@ -53,6 +55,30 @@ public class TestController {
             list.add("ddd");
         }
     }
+
+
+   /* @GetMapping("/delCooperatives")
+    public String delCooperatives( String parames) {
+        try {
+            JSONObject jsonObject = JSONObject.parseObject(parames);
+            if (!jsonObject.containsKey("cooperativesId")) {
+                return new String ("参数错误");
+            }
+
+            Long cooperativesId = jsonObject.getLong("cooperativesId");
+            String modifier = jsonObject.getString("modifier");
+            String modifierName = jsonObject.getString("modifierName");
+
+            System.out.println("cooperativesId="+cooperativesId
+                    +"; modifier="+modifier
+                    +"; modifierName="+modifierName);
+
+            return JSON.toJSONString(parames);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return "SUCCESS";
+    }*/
 
 
 
