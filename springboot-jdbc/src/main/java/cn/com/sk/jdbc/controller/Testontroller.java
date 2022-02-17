@@ -1,5 +1,6 @@
 package cn.com.sk.jdbc.controller;
 
+import cn.com.sk.jdbc.mapstruct.simple.cope.bean.entity.Source;
 import cn.com.sk.jdbc.service.PlayersService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -21,8 +22,5 @@ public class Testontroller {
     @Autowired
     private PlayersService playersService;
 
-    @RequestMapping("/get")
-    public void get(){
-        playersService.get();
-    }
+
 }

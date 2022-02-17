@@ -3,13 +3,15 @@ spring:
     name: @name@
   datasource:
     type: com.alibaba.druid.pool.DruidDataSource
-    url: jdbc:mysql://192.168.1.8:3306/test
+    url: jdbc:mysql://192.168.1.12:3306/test
     username: root
     password: 123456
     driver-class-name: com.mysql.jdbc.Driver
     initialization-mode: always
 server:
   port: 9011
+
+
 
 mybatis-plus:
   configuration:
@@ -47,3 +49,7 @@ mybatis-plus:
 #  spring.datasource.filters=stat,wall,log4j
 #  # 通过connectProperties属性来打开mergeSql功能；慢SQL记录
 #  spring.datasource.connectionProperties=druid.stat.mergeSql=true;druid.stat.slowSqlMillis=5000
+
+
+
+

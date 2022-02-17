@@ -9,7 +9,7 @@
 
     <!--指定特定数据库的jdbc驱动jar包的位置-->
     <classPathEntry
-            location="F:\\DafyHistory\\mysql\\mysql-connector-java\\5.1.8\\mysql-connector-java-5.1.8.jar"/>
+            location="/Users/sunkai/.m2/repository/mysql/mysql-connector-java/5.1.21/mysql-connector-java-5.1.21.jar"/>
 
     <context id="default" targetRuntime="MyBatis3">
 
@@ -21,10 +21,10 @@
 
         <!--jdbc的数据库连接 -->
         <jdbcConnection
-                connectionURL="jdbc:mysql://192.168.108.119:3306/drds_crm_dev_press"
+                connectionURL="jdbc:mysql://192.168.1.12:3306/test"
                 driverClass="com.mysql.jdbc.Driver"
-                userId="drds_crm_dev_press"
-                password="Wc123456">
+                userId="root"
+                password="123456">
         </jdbcConnection>
 
 
@@ -38,8 +38,8 @@
             targetPackage     指定生成的model生成所在的包名
             targetProject     指定在该项目下所在的路径
         -->
-        <javaModelGenerator targetPackage="\src"
-                            targetProject="E:\idea_project\spring\springboot-all\springboot-mybatis">
+        <javaModelGenerator targetPackage="/Users/sunkai/IdeaProjects/springboot-all/springboot-mybatis"
+                            targetProject="/Users/sunkai/IdeaProjects/springboot-all/springboot-mybatis">
 
             <!-- 是否允许子包，即targetPackage.schemaName.tableName -->
             <property name="enableSubPackages" value="false"/>
@@ -52,12 +52,12 @@
         </javaModelGenerator>
 
         <!--Mapper映射文件生成所在的目录 为每一个数据库的表生成对应的SqlMap文件 -->
-        <sqlMapGenerator targetPackage="\src"
-                         targetProject="E:\idea_project\spring\springboot-all\springboot-mybatis">
+        <sqlMapGenerator targetPackage="/Users/sunkai/IdeaProjects/springboot-all/springboot-mybatis"
+                         targetProject="/Users/sunkai/IdeaProjects/springboot-all/springboot-mybatis">
             <property name="enableSubPackages" value="false"/>
         </sqlMapGenerator>
 
-        <table tableName="COOPERATIVES_BASE" domainObjectName="CooperativesBase"
+        <table tableName="order_info" domainObjectName="OrderInfo"
                enableCountByExample="false" enableUpdateByExample="false"
                enableDeleteByExample="false" enableSelectByExample="false"
                selectByExampleQueryId="false">
