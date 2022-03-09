@@ -25,4 +25,9 @@ public class Testontroller {
     public void get(){
         playersService.get();
     }
+
+    @RequestMapping("/getSql")
+    public String getSql(){
+        return playersService.getSql();
+    }
 }

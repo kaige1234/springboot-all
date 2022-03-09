@@ -123,42 +123,42 @@
         update
         sec_staff
         set
-        `CRM_STAFF_CODE` = #{secStaff.crmStaffCode},
-        `STAFF_NAME` = #{secStaff.staffName},
-        `ORGANIZE_CODE` = #{secStaff.organizeCode},
-        `CARD_TYPE_ID` = #{secStaff.cardTypeId},
-        `CARD_NO` = #{secStaff.cardNo},
-        `GENDER` = #{secStaff.gender},
-        `EDUCATION_LEVEL` = #{secStaff.educationLevel},
-        `MOBILE_NO` = #{secStaff.mobileNo},
-        `EMAIL` = #{secStaff.email},
-        `CONTACT_ADDRESS` = #{secStaff.contactAddress},
-        `STAFF_TYPE` = #{secStaff.staffType},
-        `BUSINESS_LINE` = #{secStaff.businessLine},
-        `PROFESSION_ERP` = #{secStaff.professionErp},
-        `EMPLOY_TYPE` = #{secStaff.employType},
-        `EMPLOYMENT_NATURE` = #{secStaff.employmentNature},
-        `SALE_EMP_SIGN` = #{secStaff.saleEmpSign},
-        `STATION_LEVEL` = #{secStaff.stationLevel},
-        `EMP_POST` = #{secStaff.empPost},
-        `CAREER_TYPE` = #{secStaff.careerType},
-        `MARKETING_WORK_DATE` = #{secStaff.marketingWorkDate},
-        `BEGIN_WORK_DATE` = #{secStaff.beginWorkDate},
-        `ACCOUNT_VALID_DATE` = #{secStaff.accountValidDate},
-        `WORK_STATUS` = #{secStaff.workStatus},
-        `STATUS_ERP` = #{secStaff.statusErp},
-        `AUTH_RESTRICT` = #{secStaff.authRestrict},
-        `CREATED_TIME` = #{secStaff.createdTime},
-        `CREATED_BY_USER_C_CODE` = #{secStaff.createdByUserCCode},
-        `CREATED_BY_USER_C_NAME` = #{secStaff.createdByUserCName},
-        `CREATED_BY_ORG_CODE` = #{secStaff.createdByOrgCode},
-        `CREATED_BY_ORG_NAME` = #{secStaff.createdByOrgName},
-        `UPDATED_TIME` = #{secStaff.updatedTime},
-        `UPDATED_BY_USER_C_CODE` = #{secStaff.updatedByUserCCode},
-        `UPDATED_BY_USER_C_NAME` = #{secStaff.updatedByUserCName},
-        `UPDATED_BY_ORG_CODE` = #{secStaff.updatedByOrgCode},
-        `UPDATED_BY_ORG_NAME` = #{secStaff.updatedByOrgName},
-        `DATA_SOURCE` = #{secStaff.dataSource}
+        CRM_STAFF_CODE = #{secStaff.crmStaffCode},
+        STAFF_NAME = #{secStaff.staffName},
+        ORGANIZE_CODE = #{secStaff.organizeCode},
+        CARD_TYPE_ID = #{secStaff.cardTypeId},
+        CARD_NO = #{secStaff.cardNo},
+        GENDER = #{secStaff.gender},
+        EDUCATION_LEVEL = #{secStaff.educationLevel},
+        MOBILE_NO = #{secStaff.mobileNo},
+        EMAIL = #{secStaff.email},
+        CONTACT_ADDRESS = #{secStaff.contactAddress},
+        STAFF_TYPE = #{secStaff.staffType},
+        BUSINESS_LINE = #{secStaff.businessLine},
+        PROFESSION_ERP = #{secStaff.professionErp},
+        EMPLOY_TYPE = #{secStaff.employType},
+        EMPLOYMENT_NATURE = #{secStaff.employmentNature},
+        SALE_EMP_SIGN = #{secStaff.saleEmpSign},
+        STATION_LEVEL = #{secStaff.stationLevel},
+        EMP_POST = #{secStaff.empPost},
+        CAREER_TYPE = #{secStaff.careerType},
+        MARKETING_WORK_DATE = #{secStaff.marketingWorkDate},
+        BEGIN_WORK_DATE = #{secStaff.beginWorkDate},
+        ACCOUNT_VALID_DATE = #{secStaff.accountValidDate},
+        WORK_STATUS = #{secStaff.workStatus},
+        STATUS_ERP = #{secStaff.statusErp},
+        AUTH_RESTRICT = #{secStaff.authRestrict},
+        CREATED_TIME = #{secStaff.createdTime},
+        CREATED_BY_USER_C_CODE = #{secStaff.createdByUserCCode},
+        CREATED_BY_USER_C_NAME = #{secStaff.createdByUserCName},
+        CREATED_BY_ORG_CODE = #{secStaff.createdByOrgCode},
+        CREATED_BY_ORG_NAME = #{secStaff.createdByOrgName},
+        UPDATED_TIME = #{secStaff.updatedTime},
+        UPDATED_BY_USER_C_CODE = #{secStaff.updatedByUserCCode},
+        UPDATED_BY_USER_C_NAME = #{secStaff.updatedByUserCName},
+        UPDATED_BY_ORG_CODE = #{secStaff.updatedByOrgCode},
+        UPDATED_BY_ORG_NAME = #{secStaff.updatedByOrgName},
+        DATA_SOURCE = #{secStaff.dataSource}
         where
         STAFF_CODE = #{secStaff.staffCode}
     </update>
@@ -166,7 +166,7 @@
     <update id="updateStatusByStaffCode">
         update
         sec_staff_sync_temp
-        set `statis_date` = #{statisDateInfo}
+        set statis_date = #{statisDateInfo}
         where statis_date = #{statisDate} and STAFF_CODE = #{staffCode}
     </update>
 
