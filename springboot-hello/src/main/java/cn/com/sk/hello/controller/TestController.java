@@ -1,5 +1,7 @@
 package cn.com.sk.hello.controller;
 
+import com.alibaba.fastjson.JSON;
+import com.alibaba.fastjson.JSONObject;
 import lombok.Data;
 import lombok.extern.log4j.Log4j;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -57,7 +59,11 @@ public class TestController {
     }
 
 
+<<<<<<< Updated upstream
    /* @GetMapping("/delCooperatives")
+=======
+    @GetMapping("/delCooperatives")
+>>>>>>> Stashed changes
     public String delCooperatives( String parames) {
         try {
             JSONObject jsonObject = JSONObject.parseObject(parames);
@@ -78,7 +84,11 @@ public class TestController {
             e.printStackTrace();
         }
         return "SUCCESS";
+<<<<<<< Updated upstream
     }*/
+=======
+    }
+>>>>>>> Stashed changes
 
 
 

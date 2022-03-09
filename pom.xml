@@ -86,8 +86,10 @@
         <module>springboot-springcloud-hystrix</module>
         <module>springboot-springcloud-hystrix-openfeign</module>
         <module>springboot-webflux</module>
-        <module>springboot-springcloud-hytrix-dashboard</module>
+        <!--<module>springboot-springcloud-hytrix-dashboard</module>-->
         <module>springboot-quartz</module>
+        <module>springboot-swagger</module>
+        <module>Springboot-zookeeper</module>
     </modules>
 
     <dependencies>
