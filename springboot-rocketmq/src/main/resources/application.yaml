@@ -1,6 +1,7 @@
 spring:
   application:
-    name: @name@
+    name: spring-rocket
+
 #  datasource:
 #    hikari:
 #      pool-name: HikariCP
@@ -12,25 +13,27 @@ spring:
     hikari:
       pool-name: HikariCP
     driver-class-name: com.mysql.jdbc.Driver
-    url: jdbc:mysql://192.168.108.55:3306/base_mgr?zeroDateTimeBehavior=convertToNull
-    username: base_mgr
-    password: edasjt_2018
+    url: jdbc:mysql://192.168.1.7:3306/test?zeroDateTimeBehavior=convertToNull
+    username: root
+    password: 123456
 server:
   port: 9020
+
 # rocketmq 配置
-rocketmq:
-  #rocketmq nameservice 地址
-  name-server: 192.168.211.147:9876
-  producer:
-    group: anran-producer-group
-    topic: TopicTest
-    sync-tag: anran-topic
-    aync-tag: anran-async-tags
-    oneway-tag: anran-oneway-tags
-  consumer:
-    group: anran-producer-group
-    topic: TopicTest
-    tags: anran-sync-tags||anran-async-tags||anran-oneway-tags
+#
+#rocketmq:
+#  #rocketmq nameservice 地址
+#  name-server: 192.168.1.7:9876
+#  producer:
+#    group: anran-producer-group
+#    topic: TopicTest
+#    sync-tag: anran-topic
+#    aync-tag: anran-async-tags
+#    oneway-tag: anran-oneway-tags
+#  consumer:
+#    group: anran-producer-group
+#    topic: TopicTest
+#    tags: anran-sync-tags||anran-async-tags||anran-oneway-tags
 
 jackson:
   date-format: yyyy-MM-dd HH:mm:ss
@@ -56,3 +59,8 @@ logging:
   level:
     root: info
     cn.com.sk.rocketmq: debug
+rocketmq:
+  name-server: 192.168.1.9:9876
+  producer:
+    group: test-rocket-mq
+    send-message-timeout: 3000

@@ -1,6 +1,7 @@
 package cn.com.sk.mybatis;
 
 import org.mybatis.generator.api.ShellRunner;
+import org.springframework.context.annotation.Conditional;
 
 /**
  * @author sunkai

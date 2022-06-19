@@ -22,7 +22,7 @@ import static org.apache.tomcat.websocket.Constants.FOUND;
  * @date 2021/8/519:26
  */
 public class Consumer {
-    private String namesrvAddr = "192.168.211.148:9876";
+    private String namesrvAddr = "192.168.1.7:9876";
 
     private String TOPIC_TEST = "TopicTest";
 

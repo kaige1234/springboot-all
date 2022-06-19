@@ -24,7 +24,7 @@ public class MQProducerConfiguration {
     @Value("ProducerTest")
     private String groupName;
     //@Value("${rocketmq.producer.namesrvAddr}")
-    @Value("192.168.211.147:9876")
+    @Value("192.168.1.7:9876")
     private String namesrvAddr;
     /**
      * 消息最大大小，默认4M

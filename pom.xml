@@ -73,7 +73,6 @@
         <module>springboot-jdbc</module>
         <module>springboot-thymeleaf</module>
         <module>springboot-security</module>
-        <module>springboot-redis</module>
         <module>srpingboot-jvm</module>
         <module>springboot-seata</module>
         <module>springboot-mycat</module>

@@ -1,7 +1,25 @@
 spring:
   application:
     name: @name@
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    hikari:
+      pool-name: HikariCP
+    url: jdbc:mysql://192.168.1.7:3306/test?zeroDateTimeBehavior=convertToNull
+    username: root
+    password: 111111
 server:
   port: 9015
-
-
+mybatis-plus:
+  configuration:
+    map-underscore-to-camel-case: true
+    auto-mapping-behavior: full
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  mapper-locations: classpath*:mapper/**/*Mapper.xml
+  global-config:
+    # 逻辑删除配置
+    db-config:
+      # 删除前
+      logic-not-delete-value: 1
+      # 删除后
+      logic-delete-value: 0s

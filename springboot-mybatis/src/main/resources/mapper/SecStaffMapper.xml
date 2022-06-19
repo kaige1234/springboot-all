@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.com.sk.rocketmq.mapper.SecStaffMapper">
+    <resultMap id="BaseResultMap" type="cn.com.sk.rocketmq.entity.SecStaff">
+        <id column="STAFF_ID" jdbcType="BIGINT" property="staffId" />
+        <result column="CRM_STAFF_CODE" jdbcType="VARCHAR" property="crmStaffCode" />
+        <result column="STAFF_CODE" jdbcType="VARCHAR" property="staffCode" />
+        <result column="STAFF_NAME" jdbcType="VARCHAR" property="staffName" />
+        <result column="ORGANIZE_CODE" jdbcType="VARCHAR" property="organizeCode" />
+        <result column="CARD_TYPE_ID" jdbcType="VARCHAR" property="cardTypeId" />
+        <result column="CARD_NO" jdbcType="VARCHAR" property="cardNo" />
+        <result column="GENDER" jdbcType="VARCHAR" property="gender" />
+        <result column="EDUCATION_LEVEL" jdbcType="VARCHAR" property="educationLevel" />
+        <result column="MOBILE_NO" jdbcType="VARCHAR" property="mobileNo" />
+        <result column="EMAIL" jdbcType="VARCHAR" property="email" />
+        <result column="CONTACT_ADDRESS" jdbcType="VARCHAR" property="contactAddress" />
+        <result column="STAFF_TYPE" jdbcType="VARCHAR" property="staffType" />
+        <result column="BUSINESS_LINE" jdbcType="VARCHAR" property="businessLine" />
+        <result column="PROFESSION_ERP" jdbcType="CHAR" property="professionErp" />
+        <result column="EMPLOY_TYPE" jdbcType="VARCHAR" property="employType" />
+        <result column="EMPLOYMENT_NATURE" jdbcType="VARCHAR" property="employmentNature" />
+        <result column="SALE_EMP_SIGN" jdbcType="VARCHAR" property="saleEmpSign" />
+        <result column="STATION_LEVEL" jdbcType="VARCHAR" property="stationLevel" />
+        <result column="EMP_POST" jdbcType="VARCHAR" property="empPost" />
+        <result column="CAREER_TYPE" jdbcType="VARCHAR" property="careerType" />
+        <result column="MARKETING_WORK_DATE" jdbcType="DATE" property="marketingWorkDate" />
+        <result column="BEGIN_WORK_DATE" jdbcType="DATE" property="beginWorkDate" />
+        <result column="ACCOUNT_VALID_DATE" jdbcType="DATE" property="accountValidDate" />
+        <result column="WORK_STATUS" jdbcType="VARCHAR" property="workStatus" />
+        <result column="STATUS_ERP" jdbcType="VARCHAR" property="statusErp" />
+        <result column="STATUS" jdbcType="VARCHAR" property="status" />
+        <result column="AUTH_RESTRICT" jdbcType="VARCHAR" property="authRestrict" />
+        <result column="CREATED_TIME" jdbcType="TIMESTAMP" property="createdTime" />
+        <result column="CREATED_BY_USER_C_CODE" jdbcType="VARCHAR" property="createdByUserCCode" />
+        <result column="CREATED_BY_USER_C_NAME" jdbcType="VARCHAR" property="createdByUserCName" />
+        <result column="CREATED_BY_ORG_CODE" jdbcType="VARCHAR" property="createdByOrgCode" />
+        <result column="CREATED_BY_ORG_NAME" jdbcType="VARCHAR" property="createdByOrgName" />
+        <result column="UPDATED_TIME" jdbcType="TIMESTAMP" property="updatedTime" />
+        <result column="UPDATED_BY_USER_C_CODE" jdbcType="VARCHAR" property="updatedByUserCCode" />
+        <result column="UPDATED_BY_USER_C_NAME" jdbcType="VARCHAR" property="updatedByUserCName" />
+        <result column="UPDATED_BY_ORG_CODE" jdbcType="VARCHAR" property="updatedByOrgCode" />
+        <result column="UPDATED_BY_ORG_NAME" jdbcType="VARCHAR" property="updatedByOrgName" />
+        <result column="EXPIRE_DATE" jdbcType="DATE" property="expireDate" />
+        <result column="DATA_SOURCE" jdbcType="VARCHAR" property="dataSource" />
+    </resultMap>
+    <sql id="Base_Column_List">
+        STAFF_ID,CRM_STAFF_CODE,STAFF_CODE,STAFF_NAME,ORGANIZE_CODE,CARD_TYPE_ID,CARD_NO,
+        GENDER,EDUCATION_LEVEL,MOBILE_NO,EMAIL,CONTACT_ADDRESS,STAFF_TYPE,BUSINESS_LINE,
+        PROFESSION_ERP,EMPLOY_TYPE,EMPLOYMENT_NATURE,SALE_EMP_SIGN,STATION_LEVEL,EMP_POST,
+        CAREER_TYPE,MARKETING_WORK_DATE,BEGIN_WORK_DATE,ACCOUNT_VALID_DATE,WORK_STATUS,
+        STATUS_ERP,STATUS,CREATED_TIME,CREATED_BY_USER_C_CODE,CREATED_BY_USER_C_NAME,
+        CREATED_BY_ORG_CODE,CREATED_BY_ORG_NAME,UPDATED_TIME,UPDATED_BY_USER_C_CODE,
+        UPDATED_BY_USER_C_NAME,UPDATED_BY_ORG_CODE,UPDATED_BY_ORG_NAME,EXPIRE_DATE,DATA_SOURCE
+    </sql>
+
+   <!-- <select id="querySecStaff" resultMap="BaseResultMap">
+        select
+         <include refid="Base_Column_List"/>
+         from sec_staff where STAFF_ID =1
+    </select>-->
+
+    <select id="querySecStaff" resultType="cn.com.sk.rocketmq.entity.SecStaff">
+        select * from sec_staff where STAFF_ID =2
+    </select>
+
+
+   <!-- <insert id="insertsecStaffInfo" parameterType="com.ai.chinapost.crm.baseManage.api.bean.BaseMgrSecStaff">
+        insert into sec_staff
+        (STAFF_ID,CRM_STAFF_CODE,STAFF_CODE,STAFF_NAME,ORGANIZE_CODE,CARD_TYPE_ID,CARD_NO,
+        GENDER,EDUCATION_LEVEL,MOBILE_NO,EMAIL,CONTACT_ADDRESS,STAFF_TYPE,BUSINESS_LINE,
+        PROFESSION_ERP,EMPLOY_TYPE,EMPLOYMENT_NATURE,SALE_EMP_SIGN,STATION_LEVEL,EMP_POST,
+        CAREER_TYPE,MARKETING_WORK_DATE,BEGIN_WORK_DATE,ACCOUNT_VALID_DATE,WORK_STATUS,
+        STATUS_ERP,STATUS,CREATED_TIME,CREATED_BY_USER_C_CODE,CREATED_BY_USER_C_NAME,
+        CREATED_BY_ORG_CODE,CREATED_BY_ORG_NAME,UPDATED_TIME,UPDATED_BY_USER_C_CODE,
+        UPDATED_BY_USER_C_NAME,UPDATED_BY_ORG_CODE,UPDATED_BY_ORG_NAME,EXPIRE_DATE,DATA_SOURCE)
+        values
+        (
+        #{secStaff.staffId},
+        #{secStaff.crmStaffCode},
+        #{secStaff.staffCode},
+        #{secStaff.staffName},
+        #{secStaff.organizeCode},
+        #{secStaff.cardTypeId},
+        #{secStaff.cardNo},
+        #{secStaff.gender},
+        #{secStaff.educationLevel},
+        #{secStaff.mobileNo},
+        #{secStaff.email},
+        #{secStaff.contactAddress},
+        #{secStaff.staffType},
+        #{secStaff.businessLine},
+        #{secStaff.professionErp},
+        #{secStaff.employType},
+        #{secStaff.employmentNature},
+        #{secStaff.saleEmpSign},
+        #{secStaff.stationLevel},
+        #{secStaff.empPost},
+        #{secStaff.careerType},
+        #{secStaff.marketingWorkDate},
+        #{secStaff.beginWorkDate},
+        #{secStaff.accountValidDate},
+        #{secStaff.workStatus},
+        #{secStaff.statusErp},
+        #{secStaff.status},
+        #{secStaff.createdTime},
+        #{secStaff.createdByUserCCode},
+        #{secStaff.createdByUserCName},
+        #{secStaff.createdByOrgCode},
+        #{secStaff.createdByOrgName},
+        #{secStaff.updatedTime},
+        #{secStaff.updatedByUserCCode},
+        #{secStaff.updatedByUserCName},
+        #{secStaff.updatedByOrgCode},
+        #{secStaff.updatedByOrgName},
+        #{secStaff.expireDate},
+        #{secStaff.dataSource}
+        )
+    </insert>
+
+    <update id="updateSecStaffInfo"  parameterType="com.ai.chinapost.crm.baseManage.api.bean.BaseMgrSecStaff">
+        update
+        sec_staff
+        set
+        CRM_STAFF_CODE = #{secStaff.crmStaffCode},
+        STAFF_NAME = #{secStaff.staffName},
+        ORGANIZE_CODE = #{secStaff.organizeCode},
+        CARD_TYPE_ID = #{secStaff.cardTypeId},
+        CARD_NO = #{secStaff.cardNo},
+        GENDER = #{secStaff.gender},
+        EDUCATION_LEVEL = #{secStaff.educationLevel},
+        MOBILE_NO = #{secStaff.mobileNo},
+        EMAIL = #{secStaff.email},
+        CONTACT_ADDRESS = #{secStaff.contactAddress},
+        STAFF_TYPE = #{secStaff.staffType},
+        BUSINESS_LINE = #{secStaff.businessLine},
+        PROFESSION_ERP = #{secStaff.professionErp},
+        EMPLOY_TYPE = #{secStaff.employType},
+        EMPLOYMENT_NATURE = #{secStaff.employmentNature},
+        SALE_EMP_SIGN = #{secStaff.saleEmpSign},
+        STATION_LEVEL = #{secStaff.stationLevel},
+        EMP_POST = #{secStaff.empPost},
+        CAREER_TYPE = #{secStaff.careerType},
+        MARKETING_WORK_DATE = #{secStaff.marketingWorkDate},
+        BEGIN_WORK_DATE = #{secStaff.beginWorkDate},
+        ACCOUNT_VALID_DATE = #{secStaff.accountValidDate},
+        WORK_STATUS = #{secStaff.workStatus},
+        STATUS_ERP = #{secStaff.statusErp},
+        AUTH_RESTRICT = #{secStaff.authRestrict},
+        CREATED_TIME = #{secStaff.createdTime},
+        CREATED_BY_USER_C_CODE = #{secStaff.createdByUserCCode},
+        CREATED_BY_USER_C_NAME = #{secStaff.createdByUserCName},
+        CREATED_BY_ORG_CODE = #{secStaff.createdByOrgCode},
+        CREATED_BY_ORG_NAME = #{secStaff.createdByOrgName},
+        UPDATED_TIME = #{secStaff.updatedTime},
+        UPDATED_BY_USER_C_CODE = #{secStaff.updatedByUserCCode},
+        UPDATED_BY_USER_C_NAME = #{secStaff.updatedByUserCName},
+        UPDATED_BY_ORG_CODE = #{secStaff.updatedByOrgCode},
+        UPDATED_BY_ORG_NAME = #{secStaff.updatedByOrgName},
+        DATA_SOURCE = #{secStaff.dataSource}
+        where
+        STAFF_CODE = #{secStaff.staffCode}
+    </update>
+
+    <update id="updateStatusByStaffCode">
+        update
+        sec_staff_sync_temp
+        set statis_date = #{statisDateInfo}
+        where statis_date = #{statisDate} and STAFF_CODE = #{staffCode}
+    </update>
+
+    <select id="queryMaxCrmStaffCode" resultType="string">
+        select max(CRM_STAFF_CODE)  from sec_staff;
+    </select>
+
+    <insert id="sycnInsertStaffBatch" >
+        insert into sec_staff (<include refid="Base_Column_List"/>)
+        values
+        <foreach collection="baseMgrSecStaffList" item="item" separator=",">
+            (
+            #{item.staffId},
+            #{item.crmStaffCode},
+            #{item.staffCode},
+            #{item.staffName},
+            #{item.organizeCode},
+            #{item.cardTypeId},
+            #{item.cardNo},
+            #{item.gender},
+            #{item.educationLevel},
+            #{item.mobileNo},
+            #{item.email},
+            #{item.contactAddress},
+            #{item.staffType},
+            #{item.businessLine},
+            #{item.professionErp},
+            #{item.employType},
+            #{item.employmentNature},
+            #{item.saleEmpSign},
+            #{item.stationLevel},
+            #{item.empPost},
+            #{item.careerType},
+            #{item.marketingWorkDate},
+            #{item.beginWorkDate},
+            #{item.accountValidDate},
+            #{item.workStatus},
+            #{item.statusErp},
+            #{item.status},
+            #{item.createdTime},
+            #{item.createdByUserCCode},
+            #{item.createdByUserCName},
+            #{item.createdByOrgCode},
+            #{item.createdByOrgName},
+            #{item.updatedTime},
+            #{item.updatedByUserCCode},
+            #{item.updatedByUserCName},
+            #{item.updatedByOrgCode},
+            #{item.updatedByOrgName},
+            #{item.expireDate},
+            #{item.dataSource}
+            )
+        </foreach>
+    </insert>
+
+    <select id="queryApproverList" resultType="com.ai.chinapost.crm.baseManage.api.bo.SecCrmStaff" >
+        select distinct ss.CRM_STAFF_CODE,ss.STAFF_CODE,ss.STAFF_NAME,ssra.ROLE_CODE,
+        sbo.ORGANIZE_CODE,sbo.ORG_LEVEL,ss.BUSINESS_LINE,sbo.ORGANIZE_NAME,
+        sbo.BUSINESS_DISTRICT_CODE,sbd.DISTRICT_LEVEL,sbd.DISTRICT_NAME
+        from sec_staff ss
+        inner join sec_staff_role_author ssra on ss.CRM_STAFF_CODE=ssra.CRM_STAFF_CODE
+        inner join sec_base_organize sbo on ss.ORGANIZE_CODE = sbo.ORGANIZE_CODE
+        inner join sec_business_district sbd on sbo.BUSINESS_DISTRICT_CODE = sbd.DISTRICT_CODE
+        where 1=1
+        and ssra.status='1'
+        <choose>
+            <when test="businessLine!=null and businessLine == 'B'.toString() and approverBusinessLine != null and  approverBusinessLine =='B'.toString() ">
+                and ss.BUSINESS_LINE='B'
+                and  ssra.ROLE_CODE = '10000010'
+                and sbo.ORGANIZE_CODE= #{organizeCode}
+                &lt;!&ndash;             #        寄递_客户管理员角色编码,寄递_客户经理角色编码 &ndash;&gt;
+            </when>
+            <otherwise>
+                and ss.BUSINESS_LINE= #{approverBusinessLine}
+                and  ssra.ROLE_CODE = '10000010'
+                and sbd.DISTRICT_CODE = #{districtCode}
+                &lt;!&ndash;邮务_客户管理员角色编码,邮务_客户经理角色编码,邮务_系统管理员角色编码 &ndash;&gt;
+            </otherwise>
+        </choose>
+    </select>-->
+</mapper>
+
+
