@@ -1,8 +1,12 @@
 spring:
   application:
-    name: @name@
+    name: spring-hello
   profiles:
     active: dev
 server:
   port: 9009
+logging:
+  level:
+    cn:
+      com: info
 

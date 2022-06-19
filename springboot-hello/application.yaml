@@ -1,0 +1,12 @@
+spring:
+  application:
+    name: spring-hello
+  profiles:
+    active: dev
+server:
+  port: 9013
+logging:
+  level:
+    cn:
+      com: info
+

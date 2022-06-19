@@ -22,9 +22,9 @@ public class SyncProducer {
     public static void main(String[] args) throws Exception {
         //分组名haoke这个可以任意设置
         DefaultMQProducer producer = new DefaultMQProducer("haoke");
-
+        producer.setSendMsgTimeout(20000);
         //设置nameserver的地址
-        producer.setNamesrvAddr("192.168.211.147:9876");
+        producer.setNamesrvAddr("192.168.1.7:9876");
 
         //启动生产者
         producer.start();

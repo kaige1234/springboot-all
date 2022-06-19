@@ -1,0 +1,93 @@
+c.c.s.h.SpringbootHelloApplication - Starting SpringbootHelloApplication using Java 1.8.0_151 on 192.168.1.5 with PID 36990 (/Users/sunkai/IdeaProjects/springboot-all/springboot-hello/target/classes started by sunkai in /Users/sunkai/IdeaProjects/springboot-all)
+c.c.s.h.SpringbootHelloApplication - The following profiles are active: dev
+o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 9009 (http)
+o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-9009"]
+o.a.catalina.core.StandardService - Starting service [Tomcat]
+o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.41]
+o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 626 ms
+o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+o.s.s.c.ThreadPoolTaskScheduler - Initializing ExecutorService 'taskScheduler'
+o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-9009"]
+o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 9009 (http) with context path ''
+c.c.s.h.SpringbootHelloApplication - Started SpringbootHelloApplication in 1.182 seconds (JVM running for 1.627)
+o.s.s.c.ThreadPoolTaskScheduler - Shutting down ExecutorService 'taskScheduler'
+o.s.s.c.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+c.c.s.h.SpringbootHelloApplication - Starting SpringbootHelloApplication using Java 1.8.0_151 on 192.168.1.5 with PID 37105 (/Users/sunkai/IdeaProjects/springboot-all/springboot-hello/target/classes started by sunkai in /Users/sunkai/IdeaProjects/springboot-all)
+c.c.s.h.SpringbootHelloApplication - The following profiles are active: dev
+o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 9009 (http)
+o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-9009"]
+o.a.catalina.core.StandardService - Starting service [Tomcat]
+o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.41]
+o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 686 ms
+o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+o.s.s.c.ThreadPoolTaskScheduler - Initializing ExecutorService 'taskScheduler'
+o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-9009"]
+o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 9009 (http) with context path ''
+c.c.s.h.SpringbootHelloApplication - Started SpringbootHelloApplication in 6.16 seconds (JVM running for 6.815)
+o.s.s.c.ThreadPoolTaskScheduler - Shutting down ExecutorService 'taskScheduler'
+o.s.s.c.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+c.c.s.h.SpringbootHelloApplication - Starting SpringbootHelloApplication using Java 1.8.0_151 on 192.168.1.5 with PID 37554 (/Users/sunkai/IdeaProjects/springboot-all/springboot-hello/target/classes started by sunkai in /Users/sunkai/IdeaProjects/springboot-all)
+c.c.s.h.SpringbootHelloApplication - The following profiles are active: dev
+o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 9009 (http)
+o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-9009"]
+o.a.catalina.core.StandardService - Starting service [Tomcat]
+o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.41]
+o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 798 ms
+o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+o.s.s.c.ThreadPoolTaskScheduler - Initializing ExecutorService 'taskScheduler'
+o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-9009"]
+o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 9009 (http) with context path ''
+c.c.s.h.SpringbootHelloApplication - Started SpringbootHelloApplication in 1.46 seconds (JVM running for 2.003)
+o.s.s.c.ThreadPoolTaskScheduler - Shutting down ExecutorService 'taskScheduler'
+o.s.s.c.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+c.c.s.h.SpringbootHelloApplication - Starting SpringbootHelloApplication using Java 1.8.0_151 on 192.168.1.5 with PID 37867 (/Users/sunkai/IdeaProjects/springboot-all/springboot-hello/target/classes started by sunkai in /Users/sunkai/IdeaProjects/springboot-all)
+c.c.s.h.SpringbootHelloApplication - The following profiles are active: dev
+o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 9009 (http)
+o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-9009"]
+o.a.catalina.core.StandardService - Starting service [Tomcat]
+o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.41]
+o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 785 ms
+o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+o.s.s.c.ThreadPoolTaskScheduler - Initializing ExecutorService 'taskScheduler'
+o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-9009"]
+o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 9009 (http) with context path ''
+c.c.s.h.SpringbootHelloApplication - Started SpringbootHelloApplication in 1.497 seconds (JVM running for 2.07)
+o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+o.s.web.servlet.DispatcherServlet - Completed initialization in 0 ms
+o.s.s.c.ThreadPoolTaskScheduler - Shutting down ExecutorService 'taskScheduler'
+o.s.s.c.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+c.c.s.h.SpringbootHelloApplication - Starting SpringbootHelloApplication using Java 1.8.0_151 on 192.168.1.5 with PID 49203 (/Users/sunkai/IdeaProjects/springboot-all/springboot-hello/target/classes started by sunkai in /Users/sunkai/IdeaProjects/springboot-all)
+c.c.s.h.SpringbootHelloApplication - The following profiles are active: dev
+o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 9009 (http)
+o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-9009"]
+o.a.catalina.core.StandardService - Starting service [Tomcat]
+o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.41]
+o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2003362 ms
+o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+o.s.s.c.ThreadPoolTaskScheduler - Initializing ExecutorService 'taskScheduler'
+o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-9009"]
+o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 9009 (http) with context path ''
+c.c.s.h.SpringbootHelloApplication - Started SpringbootHelloApplication in 2004.144 seconds (JVM running for 2004.722)
+o.s.s.c.ThreadPoolTaskScheduler - Shutting down ExecutorService 'taskScheduler'
+o.s.s.c.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
