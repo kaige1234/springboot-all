@@ -25,6 +25,11 @@ public class StudentServiceImpl implements StudentService {
     }
 
     @Override
+    public String queryStudent(String name) {
+        return studentMapper.queryStudent(name);
+    }
+
+    @Override
     public int insert(Student student) {
         return studentMapper.insert(student);
     }

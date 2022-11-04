@@ -1,0 +1,12 @@
+spring:
+  application:
+    name: spring-hello
+  profiles:
+    active: dev
+server:
+  port: 2342
+logging:
+  level:
+    cn:
+      com: info
+

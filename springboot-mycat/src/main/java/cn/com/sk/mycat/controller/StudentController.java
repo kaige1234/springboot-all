@@ -23,6 +23,11 @@ public class StudentController {
         return studentService.queryFarmer(id);
     }
 
+    @RequestMapping("/queryStudent")
+    public String queryStudent( String name){
+        return studentService.queryStudent(name);
+    }
+
     @RequestMapping("/insert")
     public int insert(@RequestBody Student student){
         return studentService.insert(student);

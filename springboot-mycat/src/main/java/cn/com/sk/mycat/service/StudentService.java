@@ -14,4 +14,7 @@ public interface StudentService {
     String queryFarmer(int id);
 
     int insert(Student student);
+
+     String queryStudent(String name);
+
 }

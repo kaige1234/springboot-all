@@ -53,6 +53,7 @@ public class TestController {
 
     @GetMapping("/get")
     public Result get(){
+        System.out.println("/cooperatives/get");
         DecpSpectacularsRedFlag decpSpectacularsRedFlag = new DecpSpectacularsRedFlag();
         decpSpectacularsRedFlag.setDemandLevel(3);
         decpSpectacularsRedFlag.setFlagColor(1);

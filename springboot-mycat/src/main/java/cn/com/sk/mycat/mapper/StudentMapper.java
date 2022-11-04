@@ -11,4 +11,6 @@ import org.springframework.stereotype.Component;
 public interface StudentMapper extends BaseMapper<Student> {
 
     String queryFarmer(@Param("id") int id);
+
+    String queryStudent(@Param("name") String name);
 }
